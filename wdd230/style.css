@@ -1,0 +1,35 @@
+body {
+  background-image: url('../../Downloads/backgroud.jpg');
+  /* background-size: cover; */
+}
+
+.awesomeClass {
+  font-size: 500%;
+}
+
+.kindaAwesomeClass {
+  font-size: 300%;
+}
+
+.lameClass {
+  font-size: 25%;
+}
+
+.smallImage {
+  border-radius: 20px;
+  height: 100px;
+  width: 100px;
+  object-fit: cover;
+}
+
+@media screen and (max-width: 900px) {
+  body {
+    background-image: url('../../Downloads/background900.png');
+  }
+}
+
+@media screen and (max-width: 600px) {
+  body {
+    background-image: url('../../Downloads/background600.png');
+  }
+}

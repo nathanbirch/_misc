@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <title>Document</title>
+   <link rel="stylesheet" href="style.css">
+   <script>
+      /*
+      input:      principal
+         annual rate
+         number of years
+         periods per year
+      processing: doFV()
+            get values from inputs
+            call computeFutureValue()
+               f = a (1 + r)^n
+               return f
+      output:     future value
+      */
+      function doFV() {
+         let principal = parseFloat(document.getElementById('principal').value);
+         let rate = parseFloat(document.getElementById('rate').value);
+         let years = parseFloat(document.getElementById('years').value);
+         let periods = parseFloat(document.getElementById('periods').value);
+         let futureValue = computeFutureValue(principal, rate, years, periods);
+         document.getElementById('output').innerHTML = futureValue;
+      }
+      function computeFutureValue(principal, annualRate, years, periodsPerYear) {
+         let r = annualRate / periodsPerYear;
+         let n = years * periodsPerYear;
+         return principal * Math.pow((1 + r), n);
+      }
+   </script>
+</head>
+
+<body>
+   <h1>Investment Calculator</h1>
+   <table>
+      <tr>
+         <td class="">Amount Invested (Principal)</td>
+         <td><input type="text" id="principal"></td>
+      </tr>
+      <tr>
+         <td>Annual Rate</td>
+         <td><input type="text" id="rate"></td>
+      </tr>
+      <tr>
+         <td>Number of years</td>
+         <td><input type="text" id="years"></td>
+      </tr>
+      <tr>
+         <td>Periods per year</td>
+         <td><input type="text" id="periods"></td>
+      </tr>
+   </table>
+   <button onclick="doFV()">Compute Future Value</button>
+   <div id="output"></div>
+
+
+
+   <img src='class4images/img1.jpg' class="smallImage" />
+   <img src='class4images/img2.jpg' class="smallImage" />
+   <img src='class4images/img3.jpg' class="smallImage" />
+   <img src='class4images/img4.jpg' class="smallImage" />
+   <img src='class4images/img5.jpg' class="smallImage" />
+   <img src='class4images/img6.jpg' class="smallImage" />
+   <img src='class4images/img7.jpg' class="smallImage" />
+   <img src='class4images/img8.jpg' class="smallImage" />
+   <img src='class4images/img9.jpg' class="smallImage" />
+   <img src='class4images/img10.jpg' class="smallImage" />
+   <img src='class4images/img11.jpg' class="smallImage" />
+   <img src='class4images/img12.jpg' class="smallImage" />
+   <img src='class4images/img13.jpg' class="smallImage" />
+   <img src='class4images/img14.jpg' class="smallImage" />
+   <img src='class4images/img15.jpg' class="smallImage" />
+   <img src='class4images/img16.jpg' class="smallImage" />
+</body>
+
+</html>
