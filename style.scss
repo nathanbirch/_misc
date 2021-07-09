@@ -1,0 +1,115 @@
+// cheatSheet link: https://dev.to/finallynero/scss-cheatsheet-7g6
+// @import “button.scss” or @import “button”
+
+// variables
+$font-light: 400;
+$font-thick: 500;
+$font-heavy: 600;
+
+.element {
+  font-weight: $font-light;
+}
+
+$product-dark-blue: #324e85;
+$product-light-blue: #4c7396;
+$product-lighter-blue: #9bb7cf;
+
+.element {
+  color: $product-dark-blue;
+}
+
+// nesting
+.container {
+  width: 100%;
+  color: grey;
+  background-color: green;
+
+  div {
+    border: 1px solid black;
+
+    a {
+      text-decoration: none;
+      color: #f2f2f2;
+      &::hover {
+        color: #b2b2b2;
+      }
+    }
+  }
+}
+
+// inheritance
+.header {
+  color: grey;
+}
+
+.sub-header {
+  @extend .header;
+  font-size: 40px;
+}
+
+//mixin
+@mixin red-color {
+  color: grey;
+}
+
+.header {
+  @include red-color; /* add mixin */
+}
+
+.sub-header {
+  @include red-color;
+  font-size: 40px;
+}
+
+// operators
+@mixin top-margin($margin) {
+  margin-top: 30px + $margin;
+}
+
+.container {
+  width: 800px - 80px;
+  @include top-margin(10px);
+}
+
+// color functions
+$testMix: mix(blue, grey, 30%); /*results 30% blue and 70% grey*/
+$testLighten: lighten(#ff0000, 30%); /*results #ff9999*/
+$testDarken: darken(#ff0000, 30%); /*results #660000*/
+
+// loops
+@for $x from 1 through 70 {
+  .font-size-#{$x} {
+    font-size: 0px + $x;
+  }
+}
+@for $i from 0 through 500 {
+  .m#{$i} {
+    margin: 0px + $i;
+  }
+  .mt#{$i} {
+    margin-top: 0px + $i;
+  }
+  .mb#{$i} {
+    margin-bottom: 0px + $i;
+  }
+  .ml#{$i} {
+    margin-left: 0px + $i;
+  }
+  .mr#{$i} {
+    margin-right: 0px + $i;
+  }
+}
+
+// conditionals
+$bg: pink;
+$bg-mobile: red;
+
+p {
+  @if $bg == pink {
+    color: blue;
+  } @else if $bg-mobile == red {
+    color: green;
+  } @else {
+    color: grey;
+  }
+}
